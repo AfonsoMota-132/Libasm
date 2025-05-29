@@ -25,6 +25,7 @@ char	*ft_strcpy(char *dest, char *src);
 int		ft_strcmp(char *str1, char *str2);
 int		ft_write(int fd, char *str, int len);
 char	*ft_strdup(const char *str);
+void	ft_list_push_front(t_list **begin_list, void *data);
 size_t	ft_list_size(t_list	*list);
 
 int	main(int ac, char **av)
@@ -57,6 +58,9 @@ int	main(int ac, char **av)
 		}
 		tmp->next = NULL;
 		printf("%lu\n", ft_list_size(head));
+		ft_write(0, head->data, ft_strlen(head->data));
+		ft_write(0, "\n", 1);
+		ft_list_push_front(&head, "HELLLLOOOO");
 		ft_write(0, head->data, ft_strlen(head->data));
 		ft_write(0, "\n", 1);
 	}
