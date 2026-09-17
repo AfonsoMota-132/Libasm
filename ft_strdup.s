@@ -6,11 +6,11 @@ section	.text
 	extern ft_strcpy
 
 ft_strdup:
-	call	ft_strlen
-	add		rax, 1
 	push	rdi
+	call	ft_strlen wrt ..plt
+	add		rax, 1
 	mov		rdi, rax
-	call	malloc
+	call	malloc wrt ..plt
 	test	rax, rax
 	jz		_error
 	pop		rsi
@@ -19,5 +19,6 @@ ft_strdup:
 	ret
 
 _error:
+	pop rdi
 	xor	rax, rax
 	ret

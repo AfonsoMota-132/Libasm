@@ -15,8 +15,8 @@ _loop:
 	jmp _loop
 
 _ret:
-	movzx	eax, dl
-	movzx	ecx, cl
+	movzx	eax, cl
+	movzx	ecx, dl
 	sub		eax, ecx
 	ret
 
